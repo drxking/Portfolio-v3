@@ -14,8 +14,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body,html{
+body,html,#root{
   background:radial-gradient(circle,#a40109, #eb000c);
+  height: 100%;
+  width: 100%;
+}
+main{
+  min-height: 100svh;
 }
 
 .custom-text{
