@@ -21,6 +21,10 @@ body,html,:root{
   height: 100%;
   width: 100%;
 }
+
+html{
+  scroll-behavior: smooth;
+}
 main{
   min-height: 100svh;
 }
@@ -36,6 +40,10 @@ main{
   background: linear-gradient( rgb(35, 0, 0),transparent);
   background-clip: text;
   color: transparent;
+}
+
+.linn{
+  background: linear-gradient(180deg,#BF0911, #A70A10,#BE0911);
 }
 
 
@@ -55,6 +63,6 @@ main{
 }
 
 
-.shadow-custom{
+/* .shadow-custom{
   box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.424);
-}
+} */
