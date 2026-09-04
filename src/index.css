@@ -23,7 +23,7 @@
 
 
 .custom-text2{
-  background: linear-gradient(transparent, rgb(0, 0, 0));
+  background: linear-gradient( rgb(35, 0, 0),transparent);
   background-clip: text;
   color: transparent;
 }
@@ -42,4 +42,9 @@
   50%{
     transform: translateY(-20px);
   }
+}
+
+
+.shadow-custom{
+  box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.424);
 }

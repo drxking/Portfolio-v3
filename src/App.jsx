@@ -6,67 +6,76 @@ import { useEffect, useState } from 'react';
 let skills = [
 
   {
-    name: "GIT",
+    name: "GIT'H",
     power: 1,
-    img:"git.png"
+    img: "git.png"
   },
 
+
+
+
   {
-    name: "Linux",
+    name: "React",
     power: 2,
-    img:"linux.png"
+    img: "react.png"
+  },
+  {
+    name: "Docker",
+    power: 3,
+    img: "docker.png"
+  },
+  {
+    name: "MongoDB",
+    power: 4,
+    img: "mongo.png"
   },
   {
     name: "Postgres",
-    power: 3,
-    img:"sql.png"
-  },
-  {
-    name: "Tailwind",
-    power: 4,
-    img:"tailwind.png"
-  },
-  {
-    name: "React",
     power: 5,
-    img:"react.png"
+    img: "sql.png"
   },
   {
     name: "JavaScript",
     power: 6,
-    img:"javascript.png"
+    img: "javascript.png"
   },
   {
-    name: "Express",
+    name: "Tailwind",
     power: 5,
-    img:"express.png"
+    img: "tailwind.png"
   },
+
   {
-    name: "GSAP",
+    name: "Expresss",
     power: 4,
-    img:"gsap.png"
-  },
-  {
-    name: "MongoDB",
-    power: 3,
-    img:"mongo.png"
-  },
-  {
-    name: "Docker",
-    power: 2,
-    img:"docker.png"
+    img: "express.png"
   },
   {
     name: "Python",
-    power: 1,
-    img:"/python.png"
+    power: 3,
+    img: "/python.png"
   },
+  {
+    name: "Linux",
+    power: 2,
+    img: "linux.png"
+  },
+
+
+
+
+  {
+    name: "GSAP",
+    power: 1,
+    img: "gsap.png"
+  },
+
 ]
 
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
 
-  window.addEventListener("resize",(e)=>{
+  window.addEventListener("resize", (e) => {
     setwidth(window.innerWidth)
   })
   return (
@@ -115,19 +124,71 @@ function App() {
           />
         </div>
       </div>
+
       <div className='h-screen relative overflow-hidden grain-bg w-screen grid gap-0.5  items-end grid-cols-5  lg:grid-cols-11 '>
+
+        <div className='absolute cursiv bottom-5 text-center w-full uppercase font-bold text-8xl custom-text text-black/10 '>
+          My <br /> Skills
+        </div>
+
+
 
         {
           skills.map((e) => {
             if (e.power <= 3 && window.innerWidth < 1024) {
-              return
+              return null;
             }
+
             return (
-              <div key={e.name} className='bg-red-900/40 h-full flex flex-col justify-end'>
-                <img style={{animationDelay:`${e.power/5}s`}} src={`/skills/${e.img}`} className='w-full float' />
-                <div className={`bg-linear-to-b from-black/70 to-transparent  w-full rounded-t-full`} style={{ height: `${e.power * 10}%` }}> </div>
+              <div
+                key={e.name}
+                className="bg-red-900/40 h-full flex flex-col justify-end "
+              >
+                <img
+                  style={{
+                    animationDelay: `${e.power / 5}s`,
+                  }}
+                  src={`/skills/${e.img}`}
+                  className="w-full float"
+                />
+
+                <div
+                  className="
+            bg-linear-to-b
+            from-black/70
+            to-transparent
+            relative
+            w-full
+            rounded-t-full
+            shadow-custom
+          "
+                  style={{
+                    height: `${e.power * 10 + 15}%`,
+                  }}
+                >
+                  <p
+                    className="
+              absolute
+              top-[15%]
+              left-1/2
+              -translate-x-1/2
+              uppercase
+              font-bold
+              md:text-7xl
+              text-4xl
+              whitespace-nowrap
+              custom-text2
+            "
+                    style={{
+                      writingMode: "vertical-rl",
+                      textOrientation: "mixed",
+                    }}
+                  >
+                    {e.name}
+                  </p>
+                </div>
               </div>
-            )
+            );
           })
         }
 
