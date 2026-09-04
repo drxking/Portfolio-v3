@@ -14,6 +14,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body,html{
+  background:radial-gradient(circle,#a40109, #eb000c);
+}
 
 .custom-text{
   background: linear-gradient(rgba(0, 0, 0, 0.716), transparent);
