@@ -1,10 +1,76 @@
-import { MoveRight } from 'lucide-react';
+import { MoveRight, Power } from 'lucide-react';
 
 import ImageRevealTrail from "./components/ImageRevealTrail"
+import { useEffect, useState } from 'react';
+
+let skills = [
+
+  {
+    name: "GIT",
+    power: 1,
+    img:"git.png"
+  },
+
+  {
+    name: "Linux",
+    power: 2,
+    img:"linux.png"
+  },
+  {
+    name: "Postgres",
+    power: 3,
+    img:"sql.png"
+  },
+  {
+    name: "Tailwind",
+    power: 4,
+    img:"tailwind.png"
+  },
+  {
+    name: "React",
+    power: 5,
+    img:"react.png"
+  },
+  {
+    name: "JavaScript",
+    power: 6,
+    img:"javascript.png"
+  },
+  {
+    name: "Express",
+    power: 5,
+    img:"express.png"
+  },
+  {
+    name: "GSAP",
+    power: 4,
+    img:"gsap.png"
+  },
+  {
+    name: "MongoDB",
+    power: 3,
+    img:"mongo.png"
+  },
+  {
+    name: "Docker",
+    power: 2,
+    img:"docker.png"
+  },
+  {
+    name: "Python",
+    power: 1,
+    img:"/python.png"
+  },
+]
 
 function App() {
+  const [width, setwidth] = useState(window.innerWidth)
+
+  window.addEventListener("resize",(e)=>{
+    setwidth(window.innerWidth)
+  })
   return (
-    <main>
+    <main className='overflow-x-hidden'>
       <nav className="fixed flex w-full md:flex-row flex-col gap-6 z-50 md:justify-between items-center p-8 md:px-20  ">
         <div className='relative w-fit h-fit'>
           <a href="https://github.com/drxking" target='__blank'>
@@ -25,7 +91,7 @@ function App() {
             ))
           }
         </ul>
-        <a href="" className='group md:flex hidden'><p className="uppercase flex items-center text-sm  gap-1">Hire Me <MoveRight className='group-hover:translate-x-2 transition inline-block' /></p></a>
+        <a href="" className='group h-[60%] md:flex hidden'><p className="uppercase flex items-center text-sm  gap-1">Hire Me <MoveRight className='group-hover:translate-x-2 transition inline-block' /></p></a>
       </nav>
       <div className='h-screen flex overflow-hidden justify-center relative w-screen'>
 
@@ -48,6 +114,24 @@ function App() {
             fadeTime={500}
           />
         </div>
+      </div>
+      <div className='h-screen relative overflow-hidden grain-bg w-screen grid gap-0.5  items-end grid-cols-5  lg:grid-cols-11 '>
+
+        {
+          skills.map((e) => {
+            if (e.power <= 3 && window.innerWidth < 1024) {
+              return
+            }
+            return (
+              <div key={e.name} className='bg-red-900/40 h-full flex flex-col justify-end'>
+                <img style={{animationDelay:`${e.power/5}s`}} src={`/skills/${e.img}`} className='w-full float' />
+                <div className={`bg-linear-to-b from-black/70 to-transparent  w-full rounded-t-full`} style={{ height: `${e.power * 10}%` }}> </div>
+              </div>
+            )
+          })
+        }
+
+
       </div>
 
     </main>
