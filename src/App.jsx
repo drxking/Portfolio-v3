@@ -1,12 +1,13 @@
-import { MoveRight } from 'lucide-react';
+import { Mouse, MoveRight } from 'lucide-react';
 
 import ImageRevealTrail from "./components/ImageRevealTrail"
 import { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
+import gsap, { Expo, Power1, Power4 } from 'gsap';
 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Lenis from 'lenis';
 import { ShinyButton } from "../components/ui/shiny-button"
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -88,25 +89,25 @@ let projects = [
     skills: [
       "tailwind", "javascript", "gsap", "git"
     ],
-    link:"https://taara-clone.sudipacharya456.com.np/"
+    link: "https://taara-clone.sudipacharya456.com.np/"
   },
   {
     name: "Payment",
     img: "payment.png",
     desc: "A modern, gesture-inspired UI that brings swipe-to-pay interactions and seamless transitions to the web.",
     skills: [
-      "react", "tailwind", "javascript", "gsap","mongo"
+      "react", "tailwind", "javascript", "gsap", "mongo"
     ],
-    link:"https://payment.sudipacharya456.com.np/"
+    link: "https://payment.sudipacharya456.com.np/"
   },
   {
     name: "Dakar",
     img: "dakar.png",
     desc: "A bold and interactive website that blends futuristic design with smooth motion, delivering a visually striking and immersive exploration experience.",
     skills: [
-      "tailwind", "javascript","mongo", "gsap", "react"
+      "tailwind", "javascript", "mongo", "gsap", "react"
     ],
-    link:"https://dakar.sudipacharya456.com.np/"
+    link: "https://dakar.sudipacharya456.com.np/"
   },
   {
     name: "Wander",
@@ -115,7 +116,7 @@ let projects = [
     skills: [
       "tailwind", "javascript", "gsap"
     ],
-    link:"https://wanders.sudipacharya456.com.np/"
+    link: "https://wanders.sudipacharya456.com.np/"
   }
 ]
 
@@ -150,11 +151,40 @@ function App() {
     setwidth(window.innerWidth)
   })
 
-  const hello = useRef(null)
+  useGSAP(() => {
+    let tl = gsap.timeline()
+    tl.to(".overlay", {
+      opacity: 0,
+      delay: 1,
 
+    })
+    tl.to(".open-box", {
+      y: `-100%`,
+      stagger: 0.1,
+      ease: Power1.easeInOut,
+      duration: 1
+    })
+
+  })
 
   return (
     <main className='overflow-x-hidden'>
+      <div className='h-screen w-full fixed  pointer-events-none  z-1000 grid grid-cols-5 md:grid-cols-7'>
+        <div className='absolute overlay  -translate-x-1/2 -translate-y-1/2 flex items-center justify-center top-1/2 left-1/2 '>
+
+          <svg data-component="Octicon" aria-hidden="true" focusable="false" className="octicon octicon-mark-github scale-200 animate-spin  absolute" width="25.5" height="25.5" fill="currentColor" display="inline-block" overflow="visible" ><path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"></path></svg>
+
+          <p className='md:translate-y-16  translate-y-10 md:text-sm text-xs tracking-wider uppercase'>Loading Portfolio...</p>
+        </div>
+        {[0, 0, 0, 0, 0, 0, 0].map((e, idx) => {
+          if (idx < 5) {
+            return <div className='h-full open-box bg-linear-to-b border-r border-r-red-900 from-red-600 to-red-800'></div>
+          } else {
+            return <div className='h-full md:flex hidden open-box bg-linear-to-b border-r border-r-red-900 from-red-600 to-red-800'></div>
+          }
+        })}
+
+      </div>
       <nav className="absolute top-0 flex w-full md:flex-row flex-col gap-6 z-50 md:justify-between items-center p-8 md:px-20  ">
         <div className='relative w-fit h-fit'>
           <a href="https://github.com/drxking" target='__blank'>
@@ -176,13 +206,17 @@ function App() {
             ))
           }
           <li className="uppercase ">
-            <a  href="Sudip_Acharya_Resume.pdf" download>Resume</a>
+            <a href="Sudip_Acharya_Resume.pdf" download>Resume</a>
           </li>
         </ul>
         <a href="" className='group h-[60%] md:flex hidden'><p className="uppercase flex items-center text-sm  gap-1">Hire Me <MoveRight className='group-hover:translate-x-2 transition inline-block' /></p></a>
       </nav>
       <div className='h-screen flex overflow-hidden justify-center relative w-screen'>
 
+        <div className='flex flex-col items-center opacity-70 justify-center absolute left-1/2 -translate-x-1/2 top-[27%]'>
+          <Mouse size={20} />
+          <p className='text-[9px]'>Scroll from here</p>
+        </div>
 
 
 
@@ -254,48 +288,48 @@ function App() {
                 )
               }
               else {
-               if(window.innerWidth>=1024){
-                 return (
-                  <>
-                    <div className='flex flex-col text-black items-end'>
-                      <h1 className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</h1>
-                      <p className='xl:w-2/4 lg:w-3/4 pt-4 md:pr-10 text-right invert'>{e.desc}</p>
-                      <p className='md:pr-10 pt-10 flex justify-end gap-2'>
-                        {e.skills?.map((ei, idxs) => (
-                          <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
-                        ))}
-                      </p>
-                      <a href={e.link}>
-                        <ShinyButton className='md:mt-10 mt-2 md:mr-10'>Visit Site</ShinyButton>
-                      </a>
-                    </div>
-                    <div className='h-auto md:mt-0 mt-20'>
-                      <img src={`/projects/${e.img}`} className='h-auto w-full' />
-                    </div>
-                  </>
-                )
-               }else{
-                 return (
-                  <>
-                  <div className='h-auto md:mt-0 mt-20'>
-                      <img src={`/projects/${e.img}`} className='h-auto w-full' />
-                    </div>
-                    <div className='flex flex-col text-black items-end'>
-                      <h1 className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</h1>
-                      <p className='xl:w-2/4 lg:w-3/4 pt-4 md:pr-10 text-right invert'>{e.desc}</p>
-                      <p className='md:pr-10 pt-10 flex justify-end gap-2'>
-                        {e.skills?.map((ei, idxs) => (
-                          <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
-                        ))}
-                      </p>
-                      <a href={e.link}>
-                        <ShinyButton className='md:mt-10 mt-2 md:mr-10'>Visit Site</ShinyButton>
-                      </a>
-                    </div>
-                    
-                  </>
-                )
-               }
+                if (window.innerWidth >= 1024) {
+                  return (
+                    <>
+                      <div className='flex flex-col text-black items-end'>
+                        <h1 className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</h1>
+                        <p className='xl:w-2/4 lg:w-3/4 pt-4 md:pr-10 text-right invert'>{e.desc}</p>
+                        <p className='md:pr-10 pt-10 flex justify-end gap-2'>
+                          {e.skills?.map((ei, idxs) => (
+                            <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
+                          ))}
+                        </p>
+                        <a href={e.link}>
+                          <ShinyButton className='md:mt-10 mt-2 md:mr-10'>Visit Site</ShinyButton>
+                        </a>
+                      </div>
+                      <div className='h-auto md:mt-0 mt-20'>
+                        <img src={`/projects/${e.img}`} className='h-auto w-full' />
+                      </div>
+                    </>
+                  )
+                } else {
+                  return (
+                    <>
+                      <div className='h-auto md:mt-0 mt-20'>
+                        <img src={`/projects/${e.img}`} className='h-auto w-full' />
+                      </div>
+                      <div className='flex flex-col text-black items-end'>
+                        <h1 className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</h1>
+                        <p className='xl:w-2/4 lg:w-3/4 pt-4 md:pr-10 text-right invert'>{e.desc}</p>
+                        <p className='md:pr-10 pt-10 flex justify-end gap-2'>
+                          {e.skills?.map((ei, idxs) => (
+                            <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
+                          ))}
+                        </p>
+                        <a href={e.link}>
+                          <ShinyButton className='md:mt-10 mt-2 md:mr-10'>Visit Site</ShinyButton>
+                        </a>
+                      </div>
+
+                    </>
+                  )
+                }
               }
             })
           }

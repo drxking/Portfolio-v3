@@ -29,6 +29,7 @@ main{
   min-height: 100svh;
 }
 
+
 .custom-text{
   background: linear-gradient(rgba(0, 0, 0, 0.716), transparent);
   background-clip: text;
