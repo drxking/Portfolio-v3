@@ -21,15 +21,10 @@
   background:radial-gradient(circle, #ff000d,#9f0008);
 
 }
-body,html,:root{
-  /* background:radial-gradient(circle,#a40109, #eb000c); */
-  /* height: 100%;
-  width: 100%; */
-}
 
-html{
+/* html{
   scroll-behavior: smooth;
-}
+} */
 
 .custom-text{
   background: linear-gradient(rgba(0, 0, 0, 0.421), transparent);
