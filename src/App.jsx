@@ -211,7 +211,7 @@ function App() {
             [
               { link: "#works", name: "Works" },
               { link: "#skills", name: "Skills" },
-              { link: "#hell", name: "Interest" }
+              { link: "#interest", name: "Interest" }
             ].map((e) => (
               <li key={e.name} className="uppercase ">
                 <a href={e.link}>{e.name}</a>
