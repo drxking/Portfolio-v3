@@ -190,7 +190,6 @@ function App() {
         <ul className="flex  md:justify-center justify-between w-full items-center  md:w-auto  md:gap-12 gap-2 md:text-sm text-xs">
           {
             [
-              { link: "#", name: "Home" },
               { link: "#works", name: "Works" },
               { link: "#skills", name: "Skills" }
             ].map((e) => (
