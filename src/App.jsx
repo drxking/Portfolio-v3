@@ -404,7 +404,7 @@ function App() {
 
 
         <div className='flex lg:flex-row flex-col relative  lg:px-20 px-8 pt-0  lg:pt-0 lg:rounded-t-[10rem] rounded-t-[4rem] bg-black h-full lg:pb-0  justify-center'>
-          <div className='lg:w-1/3 opacity-70 flex flex-col pt-30 pb-10 justify-end  lg:pb-20'>
+          <div className='lg:w-1/3 opacity-70 flex flex-col md:pt-30 pt-20 pb-10 justify-end  lg:pb-20'>
             <div onClick={() =>
               lenisRef.current.scrollTo("#", {
                 duration: 4,
@@ -420,7 +420,7 @@ function App() {
             </div>
             <h1 className='text-4xl uppercase'>Sudip Acharya</h1>
             <p className='text-xs pl-4 uppercase'>Full-Stack Web Developer</p>
-            <p className='lg:text-sm text-xs opacity-75  mt-2 lg:pr-20 '>I have recently developed Laboratory Information Management System, Customer Relationship Management System, and Custom Viremennt Application but i can't share the links of these project because they are used exclusively by there selected personnels.</p>
+            <p className='lg:text-sm text-xs text-justify pt-4 md:font-["Google Sans"] md:text-left font-sans font-extralight opacity-75  mt-2 lg:pr-20'>I have recently developed Laboratory Information Management System, Customer Relationship Management System, and Custom Viremennt Application but i can't share the links of these project because they are used exclusively by there selected personnels.</p>
           </div >
           <div className='lg:w-1/3 flex flex-col items-center justify-center'>
             <h1 className='lg:text-[20rem] text-[15rem] custom-text invert cursiv font-extrabold leading-none tracking-tighter'>404</h1>
