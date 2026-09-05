@@ -374,7 +374,7 @@ function App() {
       <div className='relative pt-20 bg-[#AB0910]'>
         <h1 className='md:text-[8rem]  md:px-10 px-4 text-[4rem]  md:mb-10 leading-none  uppercase font-extrabold cursiv'>My <br /> Extra <br /> Interests</h1>
         <p className='ml-auto md:pl-20 pl-16   md:sticky md:text-lg mb-3 font-semibold uppercase top-0 md:top-[50%] z-10 tracking-widest text-white/75 text-xs md:pt-0 pt-2'>
-          My Favorite Series <br /> <span className='pl-10'>Favorite Character</span>
+          My Favourite Series <br /> <span className='pl-10'>Favourite Character</span>
         </p>
         <CircularSplitRollSection />
 
