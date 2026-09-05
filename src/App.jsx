@@ -1,4 +1,4 @@
-import { Mouse, MoveRight } from 'lucide-react';
+import { Mouse, MoveRight, ArrowUp } from 'lucide-react';
 
 import ImageRevealTrail from "./components/ImageRevealTrail"
 import { useEffect, useRef } from 'react';
@@ -122,11 +122,13 @@ let projects = [
 ]
 
 function App() {
+  const lenisRef = useRef();
 
   useGSAP(() => {
     const lenis = new Lenis({
       smoothWheel: true,
     });
+    lenisRef.current = lenis;
 
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -209,7 +211,7 @@ function App() {
             [
               { link: "#works", name: "Works" },
               { link: "#skills", name: "Skills" },
-              { link: "#interest", name: "Interest" }
+              { link: "#hell", name: "Interest" }
             ].map((e) => (
               <li key={e.name} className="uppercase ">
                 <a href={e.link}>{e.name}</a>
@@ -398,11 +400,24 @@ function App() {
           <CircularSplitRollSection />
         </div>
       </div>
-      <div className='pt-10    lg:h-[80vh] overflow-hidden'>
+      <div id='hell' className='pt-10    lg:h-[80vh] overflow-hidden'>
 
 
         <div className='flex lg:flex-row flex-col relative  lg:px-20 px-8 pt-0  lg:pt-0 lg:rounded-t-[10rem] rounded-t-[4rem] bg-black h-full lg:pb-0  justify-center'>
           <div className='lg:w-1/3 opacity-70 flex flex-col pt-30 pb-10 justify-end  lg:pb-20'>
+            <div onClick={() =>
+              lenisRef.current.scrollTo("#", {
+                duration: 4,
+              })
+            } className='flex items-center cursor-pointer gap-2 mb-10'>
+              <button
+                className=' p-1 top-20 text-black rounded-full bg-white'
+
+              >
+                <ArrowUp size={30} />
+              </button>
+              <p>Back to Up</p>
+            </div>
             <h1 className='text-4xl uppercase'>Sudip Acharya</h1>
             <p className='text-xs pl-4 uppercase'>Full-Stack Web Developer</p>
             <p className='lg:text-sm text-xs opacity-75  mt-2 lg:pr-20 '>I have recently developed Laboratory Information Management System, Customer Relationship Management System, and Custom Viremennt Application but i can't share the links of these project because they are used exclusively by there selected personnels.</p>
