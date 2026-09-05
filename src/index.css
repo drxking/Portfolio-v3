@@ -7,7 +7,8 @@
 
   font-family: var(--sans);
   color: #fff7f4;
-  background:radial-gradient(circle,#a40109, #eb000c);
+  /* background:radial-gradient(circle,#a40109, #eb000c); */
+  background-color: #BF0911;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,22 +17,22 @@
 
 }
 
+.ccc{
+  background:radial-gradient(circle, #ff000d,#9f0008);
+
+}
 body,html,:root{
-  background:radial-gradient(circle,#a40109, #eb000c);
-  height: 100%;
-  width: 100%;
+  /* background:radial-gradient(circle,#a40109, #eb000c); */
+  /* height: 100%;
+  width: 100%; */
 }
 
 html{
   scroll-behavior: smooth;
 }
-main{
-  min-height: 100svh;
-}
-
 
 .custom-text{
-  background: linear-gradient(rgba(0, 0, 0, 0.716), transparent);
+  background: linear-gradient(rgba(0, 0, 0, 0.421), transparent);
   background-clip: text;
   color: transparent;
 }

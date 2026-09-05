@@ -1,13 +1,14 @@
 import { Mouse, MoveRight } from 'lucide-react';
 
 import ImageRevealTrail from "./components/ImageRevealTrail"
-import { useEffect, useRef, useState } from 'react';
-import gsap, { Expo, Power1, Power4 } from 'gsap';
+import { useEffect, useRef } from 'react';
+import gsap, { Power1 } from 'gsap';
 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Lenis from 'lenis';
 import { ShinyButton } from "../components/ui/shiny-button"
 import { useGSAP } from '@gsap/react';
+import CircularSplitRollSection from "./components/CircularSplitRollSection";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -144,13 +145,6 @@ function App() {
   }, [])
 
 
-  const [width, setwidth] = useState(window.innerWidth)
-
-
-  window.addEventListener("resize", (e) => {
-    setwidth(window.innerWidth)
-  })
-
   useGSAP(() => {
     let tl = gsap.timeline()
     tl.to(".overlay", {
@@ -168,7 +162,7 @@ function App() {
   })
 
   return (
-    <main className='overflow-x-hidden'>
+    <main >
       <div className='h-screen w-full fixed  pointer-events-none  z-1000 grid grid-cols-5 md:grid-cols-7'>
         <div className='absolute overlay  -translate-x-1/2 -translate-y-1/2 flex items-center justify-center top-1/2 left-1/2 '>
 
@@ -185,7 +179,7 @@ function App() {
         })}
 
       </div>
-      <nav className="absolute top-0 flex w-full md:flex-row flex-col gap-6 z-50 md:justify-between items-center p-8 md:px-20  ">
+      <nav className="absolute overflow-hidden top-0 flex w-full md:flex-row flex-col gap-6 z-50 md:justify-between items-center p-8 md:px-20  ">
         <div className='relative w-fit h-fit'>
           <a href="https://github.com/drxking" target='__blank'>
             <svg data-component="Octicon" aria-hidden="true" focusable="false" className="octicon octicon-mark-github scale-200" width="26" height="26" fill="currentColor" display="inline-block" overflow="visible" style={{ "verticalAlign": "text-bottom" }}><path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"></path></svg>
@@ -209,20 +203,34 @@ function App() {
             <a href="Sudip_Acharya_Resume.pdf" download>Resume</a>
           </li>
         </ul>
-        <a href="" className='group h-[60%] md:flex hidden'><p className="uppercase flex items-center text-sm  gap-1">Hire Me <MoveRight className='group-hover:translate-x-2 transition inline-block' /></p></a>
+        <a href="mailto:xtre969@gmail.com" className='group'><p className=" flex items-center leading-none text-sm  gap-1">xtre969@gmail.com <MoveRight className='group-hover:translate-x-2 transition inline-block' /></p></a>
       </nav>
-      <div className='h-screen flex overflow-hidden justify-center relative w-screen'>
+      <div className='h-screen flex overflow-hidden justify-center relative w-full ccc'>
 
-        <div className='flex flex-col items-center opacity-70 justify-center absolute left-1/2 -translate-x-1/2 top-[27%]'>
+
+        <div id='skills' className='h-screen absolute  top-0 left-0 w-full overflow-hidden grain-bg  grid gap-0.5  items-end grid-cols-5  lg:grid-cols-11 '>
+          {
+            skills.map(() => (
+              <div className='h-full border-r-2 border-r-red-600/50 '></div>
+            ))
+          }
+        </div>
+
+        <div className='flex md:hidden flex-col items-center opacity-70 justify-center absolute left-1/2 -translate-x-1/2 top-[27%]'>
           <Mouse size={20} />
           <p className='text-[9px]'>Scroll from here</p>
         </div>
 
 
 
-        <h1 className="cursiv  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full absolute md:bottom-0  bottom-[40%]">
-          Sudip<br />Acharya</h1>
-        <div className="absolute bottom-0 w-[250%] md:w-full flex justify-center">
+        <div className='absolute flex flex-col items-center justify-center md:bottom-0 bottom-[40%]'>
+        
+          <h1 className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
+            Sudip</h1>
+          <h1 className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
+            Acharya</h1>
+        </div>
+        <div className="absolute z-20 bottom-0 w-[250%] md:w-full flex justify-center">
           <img src="arrow.png" className='absolute xl:top-[0.5vw] xl:right-[35%] lg:top-0 lg:right-[30%] md:right-[27%] right-[35%] top-[-5%]  invert sm:h-30 h-20  rotate-45' alt="" />
           {/* <img src="bg2.png"  alt="" /> */}
           <ImageRevealTrail
@@ -238,9 +246,8 @@ function App() {
         </div>
       </div>
 
-      <div id='skills' className='h-screen relative overflow-hidden grain-bg w-screen grid gap-0.5  items-end grid-cols-5  lg:grid-cols-11 '>
-
-        <div className='absolute cursiv bottom-5 text-center w-full uppercase font-bold text-8xl custom-text text-black/10 '>
+      <div id='skills' className='h-screen w-full relative overflow-hidden grain-bg  grid gap-0.5  items-end grid-cols-5  lg:grid-cols-11 '>
+        <div className='absolute invert cursiv bottom-5 text-center w-full uppercase font-bold text-8xl custom-text text-black/10 '>
           My <br /> Skills
         </div>
 
@@ -260,7 +267,7 @@ function App() {
 
 
       </div>
-      <div id='works' className='bg-[#AB0910] pt-20 md:px-10 px-4'>
+      <div id='works' className='bg-[#AB0910] py-20 md:px-10 px-4'>
         <h1 className='md:text-[11rem] text-[8rem] md:mb-10 leading-none custom-text uppercase font-extrabold invert cursiv'>My Works</h1>
         <div className='  md:pt-10 grid  grid-cols-1 lg:grid-cols-2 gap-x-5 md:gap-y-40 gap-y-5'>
           {
@@ -268,8 +275,18 @@ function App() {
               if (idx % 2 == 0) {
                 return (
                   <>
-                    <div className='h-auto md:mt-0 mt-20'>
-                      <img src={`/projects/${e.img}`} className='h-auto w-full' />
+                    <div className='h-auto w-full md:mt-0 mt-20'>
+                      {/* <img src={`/projects/${e.img}`} className='h-auto w-full' /> */}
+                      <ImageRevealTrail
+                        revealImage="/bg.png"
+                        mainImage={`/projects/${e.img}`}
+                        width="100%"
+
+                        brushSize={50}
+                        softness={0.8}
+                        holdTime={200}
+                        fadeTime={500}
+                      />
                     </div>
                     <div className='text-black'>
                       <h1 className='md:text-8xl text-5xl uppercase custom-text font-bold invert'>{e.name}</h1>
@@ -304,7 +321,17 @@ function App() {
                         </a>
                       </div>
                       <div className='h-auto md:mt-0 mt-20'>
-                        <img src={`/projects/${e.img}`} className='h-auto w-full' />
+                        {/* <img src={`/projects/${e.img}`} className='h-auto w-full' /> */}
+                        <ImageRevealTrail
+                          revealImage="/bg.png"
+                          mainImage={`/projects/${e.img}`}
+                          width="100%"
+
+                          brushSize={50}
+                          softness={0.8}
+                          holdTime={200}
+                          fadeTime={500}
+                        />
                       </div>
                     </>
                   )
@@ -312,7 +339,17 @@ function App() {
                   return (
                     <>
                       <div className='h-auto md:mt-0 mt-20'>
-                        <img src={`/projects/${e.img}`} className='h-auto w-full' />
+                        {/* <img src={`/projects/${e.img}`} className='h-auto w-full' /> */}
+                        <ImageRevealTrail
+                          revealImage="/bg.png"
+                          mainImage={`/projects/${e.img}`}
+                          width="100%"
+
+                          brushSize={50}
+                          softness={0.8}
+                          holdTime={200}
+                          fadeTime={500}
+                        />
                       </div>
                       <div className='flex flex-col text-black items-end'>
                         <h1 className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</h1>
@@ -334,6 +371,25 @@ function App() {
             })
           }
         </div>
+      </div>
+      <div className='relative pt-20 '>
+        <h1 className='md:text-[8rem]  md:px-10 px-4 text-[4rem]  md:mb-10 leading-none  uppercase font-extrabold cursiv'>My <br /> Extra <br /> Interests</h1>
+        <p className='ml-auto md:pl-20 pl-16   md:sticky md:text-lg font-semibold uppercase top-0 md:top-[50%] z-10 tracking-widest text-white/75 text-xs md:pt-0 pt-2'>
+          My Favorite Series <br /> <span className='pl-10'>Favorite Character</span>
+        </p>
+        <CircularSplitRollSection />
+
+      </div>
+      <div className='pt-10 relative h-screen overflow-hidden'>
+        <h1 className='md:text-[8rem] custom-text  md:px-10 px-4 text-[4rem] md:mb-10 leading-none  uppercase font-extrabold cursiv'>Connect With Me</h1>
+        <div className='flex flex-col h-4/5 md:pb-0 pb-30 items-center justify-center'>
+          <h1 className='md:text-[20rem] text-[15rem] custom-text invert cursiv font-extrabold leading-none tracking-tighter'>404</h1>
+          <p className='text-2xl text-center custom-text invert'>Not Found
+          </p>
+          <p className='md:text-2xl text-lg leading-none pt-4 text-center opacity-35'>
+            This person is already working remotely for <a href="#" className='underline'>CyberLhotse.</a></p>
+        </div>
+        <img src="bg.png" className='absolute w-[110%] sm:w-[40%] right-1/2 translate-x-1/2 sm:translate-0 sm:right-0 bottom-0' />
       </div>
 
     </main>
@@ -396,6 +452,8 @@ const Bar = ({ e }) => {
               text-4xl
               whitespace-nowrap
               custom-text2
+              invert
+              opacity-75
             "
           style={{
             writingMode: "vertical-rl",
