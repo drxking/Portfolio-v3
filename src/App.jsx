@@ -180,14 +180,14 @@ function App() {
 
       </div>
       <nav className="absolute overflow-hidden top-0 flex w-full md:flex-row flex-col gap-6 z-50 md:justify-between items-center p-8 md:px-20  ">
-        <div className='relative w-fit h-fit'>
+        <div className='relative w-1/4 h-fit'>
           <a href="https://github.com/drxking" target='__blank'>
             <svg data-component="Octicon" aria-hidden="true" focusable="false" className="octicon octicon-mark-github scale-200" width="26" height="26" fill="currentColor" display="inline-block" overflow="visible" style={{ "verticalAlign": "text-bottom" }}><path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"></path></svg>
 
           </a>
           <img src="arrow.png" className='absolute h-10 md:translate-x-16 translate-x-14 md:scale-200 scale-150 invert shrink-0  rotate-90 rotate-y-180 md:top-0 -top-2 ' alt="" />
         </div>
-        <ul className="flex  md:justify-center justify-between w-full items-center  md:w-auto  md:gap-12 gap-2 md:text-sm text-xs">
+        <ul className="flex md:w-2/4  md:justify-center justify-between w-full items-center    md:gap-12 gap-2 md:text-sm text-xs">
           {
             [
               { link: "#works", name: "Works" },
@@ -202,7 +202,7 @@ function App() {
             <a href="Sudip_Acharya_Resume.pdf" download>Resume</a>
           </li>
         </ul>
-        <a href="mailto:xtre969@gmail.com" className='group'><p className=" flex items-center leading-none text-sm  gap-1">xtre969@gmail.com <MoveRight className='group-hover:translate-x-2 transition inline-block' /></p></a>
+        <a href="mailto:xtre969@gmail.com" className='group md:w-1/4 '><p className=" flex items-center md:justify-end leading-none text-sm  gap-1">xtre969@gmail.com <MoveRight className='group-hover:translate-x-2 transition inline-block' /></p></a>
       </nav>
       <div className='h-screen flex overflow-hidden justify-center relative w-full ccc'>
 
@@ -223,7 +223,7 @@ function App() {
 
 
         <div className='absolute flex flex-col items-center justify-center md:bottom-0 bottom-[40%]'>
-        
+
           <h1 className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
             Sudip</h1>
           <h1 className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
@@ -371,24 +371,34 @@ function App() {
           }
         </div>
       </div>
-      <div className='relative pt-20 '>
+      <div className='relative pt-20 bg-[#AB0910]'>
         <h1 className='md:text-[8rem]  md:px-10 px-4 text-[4rem]  md:mb-10 leading-none  uppercase font-extrabold cursiv'>My <br /> Extra <br /> Interests</h1>
-        <p className='ml-auto md:pl-20 pl-16   md:sticky md:text-lg font-semibold uppercase top-0 md:top-[50%] z-10 tracking-widest text-white/75 text-xs md:pt-0 pt-2'>
+        <p className='ml-auto md:pl-20 pl-16   md:sticky md:text-lg mb-3 font-semibold uppercase top-0 md:top-[50%] z-10 tracking-widest text-white/75 text-xs md:pt-0 pt-2'>
           My Favorite Series <br /> <span className='pl-10'>Favorite Character</span>
         </p>
         <CircularSplitRollSection />
 
       </div>
-      <div className='pt-10 relative h-screen overflow-hidden'>
-        <h1 className='md:text-[8rem] custom-text  md:px-10 px-4 text-[4rem] md:mb-10 leading-none  uppercase font-extrabold cursiv'>Connect With Me</h1>
-        <div className='flex flex-col h-4/5 md:pb-0 pb-30 items-center justify-center'>
-          <h1 className='md:text-[20rem] text-[15rem] custom-text invert cursiv font-extrabold leading-none tracking-tighter'>404</h1>
-          <p className='text-2xl text-center custom-text invert'>Not Found
+      <div className='pt-10    lg:h-[80vh] overflow-hidden'>
+
+       
+        <div className='flex lg:flex-row flex-col relative  lg:px-20 px-8 pt-0  lg:pt-0 lg:rounded-t-[10rem] rounded-t-[4rem] bg-black h-full lg:pb-0  justify-center'>
+         <div className='lg:w-1/3 opacity-70 flex flex-col pt-30 pb-10 justify-end  lg:pb-20'>
+          <h1 className='text-4xl uppercase'>Sudip Acharya</h1>
+          <p className='text-xs pl-4 uppercase'>Full-Stack Web Developer</p>
+          <p className='lg:text-sm text-xs opacity-75  mt-2 lg:pr-20 '>I have recently developed Laboratory Information Management System, Customer Relationship Management System, and Custom Viremennt Application but i can't share the links of these project because they are used exclusively by there selected personnels.</p>
+        </div >
+          <div className='lg:w-1/3 flex flex-col items-center justify-center'>
+            <h1 className='lg:text-[20rem] text-[15rem] custom-text invert cursiv font-extrabold leading-none tracking-tighter'>404</h1>
+          <p className='text-xl uppercase text-center opacity-50'>Developer Not Found
           </p>
-          <p className='md:text-2xl text-lg leading-none pt-4 text-center opacity-35'>
-            This person is already working remotely for <a href="#" className='underline'>CyberLhotse.</a></p>
+          <p className='text-2xl uppercase text-center opacity-50 mt-2'>Now a Prompt Engineer. <span className='absolute'>💀</span>
+          </p>
+          </div>
+          <div className='lg:w-1/3 flex w-full pt-20 items-end'>
+            <img src="bg.png" className='scale-150 origin-bottom w-[110%] ' />
+          </div>
         </div>
-        <img src="bg.png" className='absolute w-[110%] sm:w-[40%] right-1/2 translate-x-1/2 sm:translate-0 sm:right-0 bottom-0' />
       </div>
 
     </main>
