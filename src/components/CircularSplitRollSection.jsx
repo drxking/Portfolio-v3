@@ -10,6 +10,15 @@ const interestItems = [
     characterImage: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/game-of-thrones/c/c3/Jaime_lannister_army.jpg",
     alt: "Game of Thrones poster",
   },
+  {
+    id: "KNIGHT",
+    title: "KotSK",
+    subtitle: "Ser Duncan - The Tall",
+    date: "2024",
+    mainImage: "https://m.media-amazon.com/images/M/MV5BYTRiNDYzZjEtZGEyNy00M2I3LWE2NjktNzIyZjgxOGM5OTE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    characterImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcqXbvSlxDTUIy7-CKkJ5tBk_Z_p4CDkCMMTAQq5_zLLYzWyWYLFEK5-tg&s=10",
+    alt: "Game of Thrones poster",
+  },
    {
     id: "ragnar",
     title: "Vikings",
