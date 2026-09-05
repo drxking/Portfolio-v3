@@ -1,15 +1,12 @@
-import { Mouse, MoveRight, ArrowUp } from 'lucide-react';
-
-import ImageRevealTrail from "./components/ImageRevealTrail"
-import { useEffect, useRef } from 'react';
-import gsap, { Expo, Power1 } from 'gsap';
-
+import { Fragment, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap, { Power1 } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Lenis from 'lenis';
+import { Mouse, MoveRight, ArrowUp } from 'lucide-react';
+import ImageRevealTrail from "./components/ImageRevealTrail"
 import { ShinyButton } from "../components/ui/shiny-button"
-import { useGSAP } from '@gsap/react';
 import CircularSplitRollSection from "./components/CircularSplitRollSection";
-
 gsap.registerPlugin(ScrollTrigger)
 
 let skills = [
@@ -19,10 +16,6 @@ let skills = [
     power: 1,
     img: "git.png"
   },
-
-
-
-
   {
     name: "React",
     power: 2,
@@ -191,9 +184,9 @@ function App() {
         </div>
         {[0, 0, 0, 0, 0, 0, 0].map((e, idx) => {
           if (idx < 5) {
-            return <div className='h-full open-box bg-linear-to-b border-r border-r-red-900 from-red-600 to-red-800'></div>
+            return <div key={idx} className='h-full open-box bg-linear-to-b border-r border-r-red-900 from-red-600 to-red-800'></div>
           } else {
-            return <div className='h-full md:flex hidden open-box bg-linear-to-b border-r border-r-red-900 from-red-600 to-red-800'></div>
+            return <div key={idx} className='h-full md:flex hidden open-box bg-linear-to-b border-r border-r-red-900 from-red-600 to-red-800'></div>
           }
         })}
 
@@ -229,8 +222,8 @@ function App() {
 
         <div className='h-screen absolute  top-0 left-0 w-full overflow-hidden grain-bg  grid gap-0.5  items-end grid-cols-5  lg:grid-cols-11 '>
           {
-            skills.map(() => (
-              <div className='h-full border-r-2 border-r-red-600/50 '></div>
+            skills.map((e, idx) => (
+              <div key={idx} className='h-full border-r-2 border-r-red-600/50 '></div>
             ))
           }
         </div>
@@ -293,7 +286,7 @@ function App() {
             projects.map((e, idx) => {
               if (idx % 2 == 0) {
                 return (
-                  <>
+                  <Fragment key={idx}>
                     <div className='h-auto w-full md:mt-0 mt-20'>
                       {/* <img src={`/projects/${e.img}`} className='h-auto w-full' /> */}
                       <ImageRevealTrail
@@ -320,13 +313,13 @@ function App() {
                       </a>
 
                     </div>
-                  </>
+                  </Fragment>
                 )
               }
               else {
                 if (window.innerWidth >= 1024) {
                   return (
-                    <>
+                    <Fragment key={idx}>
                       <div className='flex flex-col text-black items-end'>
                         <h1 className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</h1>
                         <p className='xl:w-2/4 lg:w-3/4 pt-4 md:pr-10 text-right invert'>{e.desc}</p>
@@ -352,7 +345,7 @@ function App() {
                           fadeTime={500}
                         />
                       </div>
-                    </>
+                    </Fragment>
                   )
                 } else {
                   return (
@@ -491,7 +484,7 @@ const Bar = ({ e }) => {
               -translate-x-1/2
               uppercase
               font-bold
-              md:text-7xl
+              xl:text-6xl
               text-4xl
               whitespace-nowrap
               custom-text2
