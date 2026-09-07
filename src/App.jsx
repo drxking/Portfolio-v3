@@ -433,7 +433,7 @@ function App() {
             </div>
             <h1 className='text-4xl uppercase'>Sudip Acharya</h1>
             <p className='text-xs pl-4 uppercase'>Full-Stack Web Developer</p>
-            <p className='lg:text-sm text-xs text-justify pt-4 md:font-["Google Sans"] md:text-left font-sans font-extralight opacity-75  mt-2 lg:pr-20'>I have recently developed Laboratory Information Management System, Customer Relationship Management System, and Custom Viremennt Application but i can't share the links of these project because they are used exclusively by there selected personnels.</p>
+            <p className='lg:text-sm text-xs text-justify pt-4 md:font-["Google Sans"] md:text-left font-sans font-extralight opacity-75  mt-2 lg:pr-20'>I have recently developed a Laboratory Information Management System, a Customer Relationship Management System, and a Custom Virement Application. I cannot share links to these projects because they are exclusively used by authorized personnel.</p>
             <div className='flex items-center gap-1 mt-2 text-3xl'>
               {
               socials.map((e)=>(
