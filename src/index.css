@@ -63,3 +63,34 @@
 /* .shadow-custom{
   box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.424);
 } */
+
+.hop-up{
+  position: relative;
+}
+.hop-up::before{
+  content: attr(data-prefix);
+  position: absolute;
+  bottom: 100%;
+  background-color:rgb(0, 0, 0);
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  padding: 2px 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px) scale(0);
+  opacity: 0;
+  font-size: 12px;
+  transition: 0.2s;
+  transform-origin: bottom;
+  color: white;
+  z-index: -1;
+  text-transform: uppercase;
+}
+.hop-up{
+  z-index: 10;
+}
+.hop-up:hover::before{
+  opacity: 1;
+  scale: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+
+}

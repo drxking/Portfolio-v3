@@ -256,11 +256,11 @@ function App() {
 
 
         <div className='absolute flex flex-col items-center justify-center md:bottom-0 bottom-[40%]'>
-
-          <h1 className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
-            Sudip</h1>
-          <h1 className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
-            Acharya</h1>
+          <h1 className='absolute opacity-0'>Sudip Acharya - Web developer</h1>
+          <p className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
+            Sudip</p>
+          <p className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
+            Acharya</p>
         </div>
         <div className="absolute z-20 bottom-0 w-[250%] md:w-full flex justify-center">
           <img src="arrow.png" className='absolute xl:top-[0.5vw] xl:right-[35%] lg:top-0 lg:right-[30%] md:right-[27%] right-[35%] top-[-5%]  invert sm:h-30 h-20  rotate-45' alt="" />
@@ -300,7 +300,7 @@ function App() {
 
       </div>
       <div id='works' className='bg-[#AB0910] py-20 md:px-10 px-4'>
-        <h1 className='md:text-[11rem] text-[6rem] md:mb-10 leading-none custom-text uppercase font-extrabold invert cursiv'>My Works</h1>
+        <p className='md:text-[11rem] text-[6rem] md:mb-10 leading-none custom-text uppercase font-extrabold invert cursiv'>My Works</p>
         <div className='  md:pt-10 grid  grid-cols-1 lg:grid-cols-2 gap-x-5 md:gap-y-40 gap-y-5'>
           {
             projects.map((e, idx) => {
@@ -321,11 +321,13 @@ function App() {
                       />
                     </div>
                     <div className='text-black'>
-                      <h1 className='md:text-8xl text-5xl uppercase custom-text font-bold invert'>{e.name}</h1>
+                      <p className='md:text-8xl text-5xl uppercase custom-text font-bold invert'>{e.name}</p>
                       <p className='xl:w-2/4 lg:w-3/4 pt-4 md:pl-10 uppercase text-xs invert'>{e.desc}</p>
                       <p className='md:pl-10 pt-10 flex  gap-2'>
                         {e.skills?.map((ei, idxs) => (
-                          <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
+                          <div data-prefix={ei} className='hop-up'>
+                              <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
+                            </div>
                         ))}
                       </p>
                       <a href={e.link}>
@@ -341,11 +343,13 @@ function App() {
                   return (
                     <Fragment key={idx}>
                       <div className='flex flex-col text-black items-end'>
-                        <h1 className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</h1>
+                        <p className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</p>
                         <p className='xl:w-2/4 lg:w-3/4 pt-4 md:pr-10 text-right invert'>{e.desc}</p>
                         <p className='md:pr-10 pt-10 flex justify-end gap-2'>
                           {e.skills?.map((ei, idxs) => (
-                            <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
+                            <div data-prefix={ei} className='hop-up'>
+                              <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
+                            </div>
                           ))}
                         </p>
                         <a href={e.link}>
@@ -384,11 +388,13 @@ function App() {
                         />
                       </div>
                       <div className='flex flex-col text-black items-end'>
-                        <h1 className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</h1>
+                        <p className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</p>
                         <p className='xl:w-2/4 lg:w-3/4 pt-4 md:pr-10 text-right invert'>{e.desc}</p>
                         <p className='md:pr-10 pt-10 flex justify-end gap-2'>
                           {e.skills?.map((ei, idxs) => (
-                            <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
+                            <div data-prefix={ei} className='hop-up'>
+                              <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
+                            </div>
                           ))}
                         </p>
                         <a href={e.link}>
@@ -405,7 +411,7 @@ function App() {
         </div>
       </div>
       <div className='relative pt-20 bg-[#AB0910]'>
-        <h1 className='md:text-[8rem]  md:px-10 px-4 text-[4rem]  md:mb-10 leading-none  uppercase font-extrabold cursiv'>My <br /> Extra <br /> Interests</h1>
+        <p className='md:text-[8rem]  md:px-10 px-4 text-[4rem]  md:mb-10 leading-none  uppercase font-extrabold cursiv'>My <br /> Extra <br /> Interests</p>
         <p className='ml-auto md:pl-20 pl-16   md:sticky md:text-lg mb-3 font-semibold uppercase top-0 md:top-[50%] z-10 tracking-widest text-white/75 text-xs md:pt-0 pt-2'>
           My Favourite Series <br /> <span className='pl-10'>Favourite Character</span>
         </p>
@@ -431,7 +437,7 @@ function App() {
               </button>
               <p>Back to Up</p>
             </div>
-            <h1 className='text-4xl uppercase'>Sudip Acharya</h1>
+            <p className='text-4xl uppercase'>Sudip Acharya</p>
             <p className='text-xs pl-4 uppercase'>Full-Stack Web Developer</p>
             <p className='lg:text-sm text-xs text-justify pt-4 md:font-["Google Sans"] md:text-left font-sans font-extralight opacity-75  mt-2 lg:pr-20'>I have recently developed a Laboratory Information Management System, a Customer Relationship Management System, and a Custom Virement Application. I cannot share links to these projects because they are exclusively used by authorized personnel.</p>
             <div className='flex items-center gap-1 mt-2 text-3xl'>
@@ -443,7 +449,7 @@ function App() {
             </div>
           </div >
           <div className='lg:w-1/3 flex flex-col items-center justify-center'>
-            <h1 className='lg:text-[20rem] text-[15rem] custom-text invert cursiv font-extrabold leading-none tracking-tighter'>404</h1>
+            <p className='lg:text-[20rem] text-[15rem] custom-text invert cursiv font-extrabold leading-none tracking-tighter'>404</p>
             <p className='text-xl uppercase text-center opacity-50'>Developer Not Found
             </p>
             <p className='text-2xl uppercase text-center opacity-50 mt-2'>Now a Prompt Engineer. <span className='absolute'>💀</span>
