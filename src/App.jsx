@@ -7,6 +7,7 @@ import { Mouse, MoveRight, ArrowUp } from 'lucide-react';
 import ImageRevealTrail from "./components/ImageRevealTrail"
 import { ShinyButton } from "../components/ui/shiny-button"
 import CircularSplitRollSection from "./components/CircularSplitRollSection";
+import CardCircle from './components/CircleCards';
 gsap.registerPlugin(ScrollTrigger)
 
 let skills = [
@@ -116,25 +117,26 @@ let projects = [
 
 let socials = [
   {
-    "icon":"ri-instagram-line",
-    "link" : "https://www.instagram.com/sudipacharya.js/"
+    "icon": "ri-instagram-line",
+    "link": "https://www.instagram.com/sudipacharya.js/"
   },
   {
-    "icon":"ri-facebook-circle-line",
-    "link":"https://www.facebook.com/sudip.acharya.927980"
+    "icon": "ri-facebook-circle-line",
+    "link": "https://www.facebook.com/sudip.acharya.927980"
   },
   {
-    "icon" :"ri-twitter-x-line",
-    "link":"https://x.com/drxking456"
+    "icon": "ri-twitter-x-line",
+    "link": "https://x.com/drxking456"
   },
   {
-    "icon":"ri-github-fill",
-    "link":"https://github.com/drxking"
+    "icon": "ri-github-fill",
+    "link": "https://github.com/drxking"
   }
 ]
 
 function App() {
   const lenisRef = useRef();
+  const images = Array.from({ length: 20 }, (_, i) => `/circle/img${i + 1}.jpg`);
 
   useGSAP(() => {
     const lenis = new Lenis({
@@ -262,6 +264,9 @@ function App() {
           <p className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
             Acharya</p>
         </div>
+        <div className='flex absolute z-20 w-full opacity-75 items-center translate-y-28 justify-center h-screen'>
+          <CardCircle cards={images} radius={450} cardWidth={70} cardHeight={96} />
+        </div>
         <div className="absolute z-20 bottom-0 w-[250%] md:w-full flex justify-center">
           <img src="arrow.png" className='absolute xl:top-[0.5vw] xl:right-[35%] lg:top-0 lg:right-[30%] md:right-[27%] right-[35%] top-[-5%]  invert sm:h-30 h-20  rotate-45' alt="" />
           {/* <img src="bg2.png"  alt="" /> */}
@@ -326,8 +331,8 @@ function App() {
                       <p className='md:pl-10 pt-10 flex  gap-2'>
                         {e.skills?.map((ei, idxs) => (
                           <div data-prefix={ei} className='hop-up'>
-                              <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
-                            </div>
+                            <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
+                          </div>
                         ))}
                       </p>
                       <a href={e.link}>
@@ -442,10 +447,10 @@ function App() {
             <p className='lg:text-sm text-xs text-justify pt-4 md:font-["Google Sans"] md:text-left font-sans font-extralight opacity-75  mt-2 lg:pr-20'>I have recently developed a Laboratory Information Management System, a Customer Relationship Management System, and a Custom Virement Application. I cannot share links to these projects because they are exclusively used by authorized personnel.</p>
             <div className='flex items-center gap-1 mt-2 text-3xl'>
               {
-              socials.map((e)=>(
-                <a target='__blank' href={e.link}><i className={e.icon}></i></a>
-              ))
-            }
+                socials.map((e) => (
+                  <a target='__blank' href={e.link}><i className={e.icon}></i></a>
+                ))
+              }
             </div>
           </div >
           <div className='lg:w-1/3 flex flex-col items-center justify-center'>
@@ -453,7 +458,7 @@ function App() {
             <p className='text-xl uppercase text-center opacity-50'>Developer Not Found
             </p>
             <p className='text-2xl uppercase text-center opacity-50 mt-2'>Now a Prompt Engineer. <span className='absolute'>💀</span>
-            
+
             </p>
           </div>
           <div className='lg:w-1/3 flex w-full pt-20 items-end'>
