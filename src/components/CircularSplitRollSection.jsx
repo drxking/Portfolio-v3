@@ -87,7 +87,7 @@ export default function CircularSplitRollSection() {
       sectionHeight={100}
       textSideScale={0.68}
       textSideOpacity={0.18}
-      background="#AB0910"
+      background="transparent"
       titleColor="#fff7f4"
       className="grain-bg"
       gridTitleClassName="invert custom-text2 uppercase"

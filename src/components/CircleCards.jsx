@@ -22,7 +22,6 @@ const CardCircle = ({
 
 
   function circleManager() {
-    console.log(window.innerWidth)
     if (window.innerWidth < 1024) {
       document.querySelector(".repear").style.scale = 0.7
       document.querySelector(".repear").style.transform = `translateY(150px)`

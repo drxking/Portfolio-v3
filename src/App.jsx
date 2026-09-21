@@ -212,6 +212,7 @@ function App() {
         })}
 
       </div>
+
       <nav className="absolute overflow-hidden top-0 flex w-full md:flex-row flex-col gap-6 z-50 md:justify-between items-center p-8 md:px-20  ">
         <div className='relative w-1/4 flex items-center md:justify-start justify-center h-fit'>
           <a href="https://github.com/drxking" target='__blank'>
@@ -221,7 +222,7 @@ function App() {
           <img src="arrow.png" className='absolute  h-7 md:translate-x-14 translate-x-0 left-[80%] md:left-0 md:scale-200 scale-150 invert shrink-0  rotate-90 rotate-y-180 md:top-0 -top-2 ' alt="" />
           <p className='text-xs translate-x-12 translate-y-5 hidden lg:flex -rotate-35 uppercase'>My Github</p>
         </div>
-        <ul className="flex md:w-2/4  md:justify-center justify-between w-full items-center    md:gap-12 gap-2 md:text-sm text-xs">
+        <ul className="flex md:w-2/4  md:justify-center justify-between w-full items-center    md:gap-12 gap-2 md:text-xs text-xs">
           {
             [
               { link: "#works", name: "Works" },
@@ -237,18 +238,20 @@ function App() {
             <a href="Sudip_Acharya_Resume.pdf" download>Resume</a>
           </li>
         </ul>
-        <a href="mailto:xtre969@gmail.com" className='group md:w-1/4 '><p className=" flex items-center md:justify-end leading-none text-sm  gap-1">xtre969@gmail.com <MoveRight className='group-hover:translate-x-2 transition inline-block' /></p></a>
+        <a href="mailto:xtre969@gmail.com" className='group md:w-1/4 '><p className=" flex items-center md:justify-end leading-none text-xs uppercase  gap-1">xtre969@gmail.com <MoveRight className='group-hover:translate-x-2 transition inline-block' /></p></a>
       </nav>
       <div className='h-screen flex overflow-hidden justify-center relative w-full ccc'>
 
 
-        <div className='h-screen absolute  top-0 left-0 w-full overflow-hidden grain-bg  grid gap-0.5  items-end grid-cols-5  lg:grid-cols-11 '>
+
+
+        {/* <div className='h-screen absolute  top-0 left-0 w-full overflow-hidden grain-bg  grid gap-0.5  items-end grid-cols-5  lg:grid-cols-11 '>
           {
             skills.map((e, idx) => (
               <div key={idx} className='h-full border-r-2 border-r-red-600/50 '></div>
             ))
           }
-        </div>
+        </div> */}
 
         <div className='flex md:hidden flex-col items-center opacity-70 justify-center absolute left-1/2 -translate-x-1/2 top-[27%]'>
           <Mouse size={20} />
@@ -256,13 +259,30 @@ function App() {
         </div>
 
 
+        <div className="container1 ">
+          <div className="overlay1"></div>
+          <div className="main">
+            <div className="one"></div>
+            <div className="two one"></div>
+            <div className="three one"></div>
+          </div>
+        </div>
 
-        <div className='absolute flex flex-col items-center justify-center md:bottom-0 bottom-[40%]'>
+
+
+        <div className='absolute flex flex-col w-full justify-center items-end md:bottom-0 h-full'>
+
+
+
+
+
+
+
           <h1 className='absolute opacity-0'>Sudip Acharya - Web developer</h1>
-          <p className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
-            Sudip</p>
-          <p className="cursiv z-10  text-[25vw] custom-text leading-none font-extrabold uppercase text-center w-full   ">
-            Acharya</p>
+          <p className="cursiv  z-10  text-[8vw] opacity-75 leading-none font-extrabold uppercase md:translate-y-0 -translate-y-20 p-5 w-full absolute  ">
+            FullStack</p>
+          <p className="cursiv z-10   text-[8vw] opacity-75 leading-none font-extrabold uppercase md:translate-y-0 -translate-y-20  p-5  absolute ">
+            Developer</p>
         </div>
         <div className='flex absolute z-20 w-full opacity-75 items-center translate-y-28 justify-center h-screen'>
           <CardCircle cards={images} radius={450} cardWidth={70} cardHeight={96} />
@@ -304,8 +324,17 @@ function App() {
 
 
       </div>
-      <div id='works' className='bg-[#AB0910] py-20 md:px-10 px-4'>
-        <p className='md:text-[11rem] text-[6rem] md:mb-10 leading-none custom-text uppercase font-extrabold invert cursiv'>My Works</p>
+      <div id='works' className='py-20 md:px-10 px-4 relative'>
+        <div className="container1 absolute bordere">
+            <div className="overlay1"></div>
+            <div className="main">
+              <div className="one"></div>
+              <div className="two one"></div>
+              <div className="three one"></div>
+            </div>
+          </div>
+        
+        <p className='md:text-[11rem] text-[6rem] md:mb-20 leading-none custom-text uppercase font-extrabold invert cursiv'>My Works</p>
         <div className='  md:pt-10 grid  grid-cols-1 lg:grid-cols-2 gap-x-5 md:gap-y-40 gap-y-5'>
           {
             projects.map((e, idx) => {
@@ -328,13 +357,13 @@ function App() {
                     <div className='text-black'>
                       <p className='md:text-8xl text-5xl uppercase custom-text font-bold invert'>{e.name}</p>
                       <p className='xl:w-2/4 lg:w-3/4 pt-4 md:pl-10 uppercase text-xs invert'>{e.desc}</p>
-                      <p className='md:pl-10 pt-10 flex  gap-2'>
+                      <div className='md:pl-10 pt-10 flex  gap-2'>
                         {e.skills?.map((ei, idxs) => (
-                          <div data-prefix={ei} className='hop-up'>
+                          <div key={idxs} data-prefix={ei} className='hop-up'>
                             <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
                           </div>
                         ))}
-                      </p>
+                      </div>
                       <a href={e.link}>
                         <ShinyButton className='md:mt-10 mt-2 md:ml-10'>Visit Site</ShinyButton>
                       </a>
@@ -378,7 +407,7 @@ function App() {
                   )
                 } else {
                   return (
-                    <>
+                    <Fragment key={idx}>
                       <div className='h-auto md:mt-0 mt-20'>
                         {/* <img src={`/projects/${e.img}`} className='h-auto w-full' /> */}
                         <ImageRevealTrail
@@ -395,19 +424,19 @@ function App() {
                       <div className='flex flex-col text-black items-end'>
                         <p className='md:text-8xl text-5xl uppercase custom-text invert font-bold'>{e.name}</p>
                         <p className='xl:w-2/4 lg:w-3/4 pt-4 md:pr-10 text-right invert'>{e.desc}</p>
-                        <p className='md:pr-10 pt-10 flex justify-end gap-2'>
+                        <div className='md:pr-10 pt-10 flex justify-end gap-2'>
                           {e.skills?.map((ei, idxs) => (
-                            <div data-prefix={ei} className='hop-up'>
+                            <div key={idxs} data-prefix={ei} className='hop-up'>
                               <img key={idxs} src={`/skills/${ei}.png`} className='h-14' alt={ei} />
                             </div>
                           ))}
-                        </p>
+                        </div>
                         <a href={e.link}>
                           <ShinyButton className='md:mt-10 mt-2 md:mr-10'>Visit Site</ShinyButton>
                         </a>
                       </div>
 
-                    </>
+                    </Fragment>
                   )
                 }
               }
@@ -415,8 +444,23 @@ function App() {
           }
         </div>
       </div>
-      <div className='relative pt-20 bg-[#AB0910]'>
-        <p className='md:text-[8rem]  md:px-10 px-4 text-[4rem]  md:mb-10 leading-none  uppercase font-extrabold cursiv'>My <br /> Extra <br /> Interests</p>
+      <div className='relative pt-20'>
+
+        
+
+        <div className='curve-background h-full w-full absolute -z-10'>
+          <div className="container1">
+            <div className="overlay1"></div>
+            <div className="main">
+              <div className="one"></div>
+              <div className="two one"></div>
+              <div className="three one"></div>
+            </div>
+          </div>
+          <div className='h-full w-full backdrop-blur-[20px] z-10'></div>
+
+        </div>
+        <p className='md:text-[8rem]  md:px-10 px-4 text-[4rem]  md:mb-10 mt-10 leading-none  uppercase font-extrabold cursiv'>My <br /> Extra <br /> Interests</p>
         <p className='ml-auto md:pl-20 pl-16   md:sticky md:text-lg mb-3 font-semibold uppercase top-0 md:top-[50%] z-10 tracking-widest text-white/75 text-xs md:pt-0 pt-2'>
           My Favourite Series <br /> <span className='pl-10'>Favourite Character</span>
         </p>
@@ -448,7 +492,7 @@ function App() {
             <div className='flex items-center gap-1 mt-2 text-3xl'>
               {
                 socials.map((e) => (
-                  <a target='__blank' href={e.link}><i className={e.icon}></i></a>
+                  <a key={e.link} target='__blank' href={e.link}><i className={e.icon}></i></a>
                 ))
               }
             </div>
