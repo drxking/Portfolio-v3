@@ -227,13 +227,17 @@ function App() {
             [
               { link: "#works", name: "Works" },
               { link: "#skills", name: "Skills" },
-              { link: "#interest", name: "Interest" }
+              { link: "#interest", name: "Interest" },
             ].map((e) => (
               <li key={e.name} className="uppercase ">
                 <a href={e.link}>{e.name}</a>
               </li>
             ))
           }
+          
+          <li className="uppercase ">
+            <a href="https://blog.sudipacharya456.com.np/#latest" target='_blank' download>Blogs</a>
+          </li>
           <li className="uppercase ">
             <a href="Sudip_Acharya_Resume.pdf" download>Resume</a>
           </li>
