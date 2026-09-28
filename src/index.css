@@ -144,7 +144,7 @@
   transform: scale(105%) translateY(200px);
 }
 
-.overlay1{
+.overlay1 {
   height: 100%;
   width: 100%;
   backdrop-filter: blur(110px);

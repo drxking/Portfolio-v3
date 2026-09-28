@@ -105,13 +105,13 @@ let projects = [
     link: "https://dakar.sudipacharya456.com.np/"
   },
   {
-    name: "Wander",
-    img: "wander.png",
-    desc: "A modern web experience combining smooth animations, immersive scrolling, and elegant interactivity",
+    name: "Menuu",
+    img: "menu.png",
+    desc: "A modern web menu app that instantly create a new menu for restaurant with qr code for quick scan and also have asthetic vinyl theme music player for customers.",
     skills: [
-      "tailwind", "javascript", "gsap"
+      "tailwind", "javascript", "react", "gsap", 'express'
     ],
-    link: "https://wanders.sudipacharya456.com.np/"
+    link: "https://menu-one-wine.vercel.app/"
   }
 ]
 
@@ -326,14 +326,16 @@ function App() {
       </div>
       <div id='works' className='py-20 md:px-10 px-4 relative'>
         <div className="container1 absolute bordere">
-            <div className="overlay1"></div>
-            <div className="main">
-              <div className="one"></div>
-              <div className="two one"></div>
-              <div className="three one"></div>
-            </div>
+          <div className="overlay1"></div>
+          <div className="main">
+            <div className="one"></div>
+            <div className="two one"></div>
+            <div className="three one"></div>
           </div>
+        </div>
+       
         
+
         <p className='md:text-[11rem] text-[6rem] md:mb-20 leading-none custom-text uppercase font-extrabold invert cursiv'>My Works</p>
         <div className='  md:pt-10 grid  grid-cols-1 lg:grid-cols-2 gap-x-5 md:gap-y-40 gap-y-5'>
           {
@@ -446,7 +448,7 @@ function App() {
       </div>
       <div className='relative pt-20'>
 
-        
+
 
         <div className='curve-background h-full w-full absolute -z-10'>
           <div className="container1">
