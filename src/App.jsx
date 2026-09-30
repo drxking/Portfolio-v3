@@ -288,9 +288,9 @@ function App() {
           <p className="cursiv z-10   text-[8vw] opacity-75 leading-none font-extrabold uppercase md:translate-y-0 -translate-y-20  p-5  absolute ">
             Developer</p>
         </div>
-        <div className='flex absolute z-20 w-full opacity-75 items-center translate-y-28 justify-center h-screen'>
+        {/* <div className='flex absolute z-20 w-full opacity-75 items-center translate-y-28 justify-center h-screen'>
           <CardCircle cards={images} radius={450} cardWidth={70} cardHeight={96} />
-        </div>
+        </div> */}
         <div className="absolute z-20 bottom-0 w-[250%] md:w-full flex justify-center">
           <img src="arrow.png" className='absolute xl:top-[0.5vw] xl:right-[35%] lg:top-0 lg:right-[30%] md:right-[27%] right-[35%] top-[-5%]  invert sm:h-30 h-20  rotate-45' alt="" />
           {/* <img src="bg2.png"  alt="" /> */}
